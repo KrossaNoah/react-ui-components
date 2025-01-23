@@ -1,0 +1,32 @@
+$spacing-unit: 4px;
+$spacing-steps: 25px;
+
+$sides-to-alias: (
+  left: 'l',
+  right: 'r',
+  top: 't',
+  bottom: 'b'
+);
+
+$attribute-to-alias: (
+  margin: 'm',
+  padding: 'p'
+);
+
+
+@for $i from 1 through $spacing-steps {
+  $spacing: $i * $spacing-unit;
+  @each $attribute, $attribute-alias in $attribute-to-alias {      
+    .#{$attribute-alias} {
+      &-#{$i} { // .[m|p]+-+<$i>
+        #{$attribute}: $i * $spacing;
+      }
+      
+      @each $side, $side-alias in $sides-to-alias {
+        &#{$side-alias}-#{$i} { // .[m|p]+[l|t|r|b]+-+<$i>
+          #{$attribute}-#{$side}: $spacing;
+        }
+      }
+    }
+  }
+}
