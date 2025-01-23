@@ -14,7 +14,8 @@ export default defineConfig({
       '@components': resolve(__dirname, 'src/sass/components'),
       '@config': resolve(__dirname, 'src/sass/config'),
       '@mixins': resolve(__dirname, 'src/sass/config'),
-      '@functions': resolve(__dirname, 'src/sass/functions')
+      '@functions': resolve(__dirname, 'src/sass/functions'),
+      '@atoms': resolve(__dirname, 'src/sass/atoms')
     }
   },
   
