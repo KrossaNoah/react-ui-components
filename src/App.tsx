@@ -1,13 +1,13 @@
 import { useContext } from "react"
 import { ThemeContext } from "./utils/Theme/Context"
+import { ThemeToggle } from "./utils/Theme/ThemeToggle"
 
 function App() {
-  const {theme, toggleTheme} = useContext(ThemeContext)
+  const {theme} = useContext(ThemeContext)
   return (
     <div className={`${theme}-mode`} id="app">
-      <button
-        onClick={() => toggleTheme()}
-      >{theme}</button>
+      <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, placeat?</h1>
+      <ThemeToggle />
     </div>
   )
 }

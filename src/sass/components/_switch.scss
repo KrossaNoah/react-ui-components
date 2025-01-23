@@ -1,0 +1,49 @@
+/// @description:
+/// This switch button should be refactored, Their styles only adopted for
+/// `<ThemeToggle>`. And the intention is to adapt it for forms as well.
+
+.switch {
+  // Structure
+  width: 55px; height: 30px;
+  position: relative;  
+  padding: 3px;
+  
+  // Visual
+  background-color: var(--theme-surface);
+  border-radius: 25px;
+  cursor: pointer;
+  outline: 2px solid transparent;
+
+  // State: hover
+  &:hover {
+    outline-color: var(--theme-alt-surface);
+  }
+
+
+  // Child: thumb
+  &__thumb {    
+
+    // Structure
+    width: 24px; height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // Visual
+    transition: all .4s ease-in-out;
+    background-color: var(--theme-alt-surface);
+    color: var(--theme-on-surface);
+    border-radius: 50%;
+    
+    // State: default, off
+    &,
+    &--off {
+      left: 2px;
+    } 
+
+    // State: on
+    &--on {
+      transform: translateX(26px)
+    }
+  } 
+}
