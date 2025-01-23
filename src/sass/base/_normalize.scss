@@ -1,0 +1,17 @@
+/// @description: 
+/// Normalize default browsers styles
+
+
+/// Whats do?
+/// + Remove `margin` and `padding` for all elements.
+/// + Set `box-sizin` as `border-box` to include border and padding to element width
+* {
+  &,
+  &::before,
+  &::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+

@@ -1,0 +1,17 @@
+/// @description
+/// This is the entry component of the app,should be unique, so we use an id as
+/// a selector.
+/// 
+/// Whats do?
+/// + setup background and text color using root theme variables.
+/// + take 100% of viewport size.
+/// + has a transition to smooth out the change of theme
+#app {
+  background-color: var(--theme-container);
+  color: var(--theme-on-container);
+  width: 100dvw;
+  height: 100dvh;
+  transition: 
+  background-color .5s ease-in-out,
+  color .5s ease-in-out;
+}
