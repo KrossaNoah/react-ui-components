@@ -10,6 +10,11 @@
   /// @color
   /// Put here all color vars that No son sensibles a los cambios de tema.
   --color-primary: red;
+
+  /// @font:family
+  /// This font family is embded in the <head> of index.html.
+  /// is imported from google.
+  --font-family-primary: 'IBM Plex Sans'
 }
 
 
