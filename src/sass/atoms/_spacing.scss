@@ -5,7 +5,9 @@ $sides-to-alias: (
   left: 'l',
   right: 'r',
   top: 't',
-  bottom: 'b'
+  bottom: 'b',
+  inline: 'x',
+  block: 'y'
 );
 
 $attribute-to-alias: (
@@ -21,7 +23,7 @@ $attribute-to-alias: (
       &-#{$i} { // .[m|p]+-+<$i>
         #{$attribute}: $i * $spacing;
       }
-      
+
       @each $side, $side-alias in $sides-to-alias {
         &#{$side-alias}-#{$i} { // .[m|p]+[l|t|r|b]+-+<$i>
           #{$attribute}-#{$side}: $spacing;
