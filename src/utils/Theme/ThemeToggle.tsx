@@ -8,12 +8,15 @@ export function ThemeToggle() {
     dark: <TbMoonFilled />,
     light: <TbSunFilled />
   }
-  return <div>
+  
+  const switchState = theme === 'light' ? 'off' : 'on'
 
+  return <div className="toggle-theme py-2 px-3 flx al-cntr">
     <div className="switch" onClick={toggleTheme}>
-      <span className={`switch__thumb switch__thumb--${theme==='dark'?`off`:'on'}`} >
+      <span className={`switch__thumb switch__thumb--${switchState}`} >
         {icons[theme as keyof typeof icons]}
       </span>
     </div>
+    <span>appearance</span>
   </div>
 }
