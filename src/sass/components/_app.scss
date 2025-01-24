@@ -8,6 +8,7 @@
 /// + take 100% of viewport size.
 /// + has a transition to smooth out the change of theme
 #app {
+
   background-color: var(--theme-container);
   color: var(--theme-on-container);
   width: 100dvw;
@@ -15,4 +16,5 @@
   transition: 
   background-color .5s ease-in-out,
   color .5s ease-in-out;
+
 }

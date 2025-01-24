@@ -1,0 +1,49 @@
+/// @description
+/// Flexbox helpers, atom classes that help us to for flex properties
+
+ 
+.flx {
+  display: flex;
+}
+
+.flx-col {
+  @extend .flx;
+  flex-direction: column;
+}
+
+.flx-ln {
+  display: inline-flex;
+}
+
+.flx-ln-col {
+  @extend .flx-ln;
+  flex-direction: column;
+}
+
+
+$justify-to-alias: (
+  space-between: jf-btw,
+  space-around: jf-arud,
+  flex-start: jf-str,
+  flex-end: jf-end,
+  center: jf-cntr
+);
+
+@each $value,$alias in $justify-to-alias {
+  .#{$alias} {
+    justify-content: $value;
+  }
+}
+
+
+$align-to-alias: (
+  center: al-cntr,
+  flex-end: al-end,
+  flex-start: al-str
+);
+
+@each $value, $alias in $align-to-alias {
+  .#{$alias} {
+    align-items: $value;
+  }
+}

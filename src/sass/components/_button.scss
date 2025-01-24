@@ -1,0 +1,26 @@
+@use '@atoms/color-context' as *;
+
+.button {
+  @extend %color-context-default; 
+  height: 40px;
+  padding-inline: 20px;
+  border-radius: 20px;
+  border: none;
+  outline: 2px solid transparent;
+
+  transition: 
+    color .5s ease-in-out,
+    background-color .4s ease-in-out,
+    outline-color .3s ease-in-out;
+
+}
+
+.button {
+  &:active {
+    background-color: var(--theme-alt-surface);
+  } 
+  &:focus {
+    outline-color: var(--theme-accent);
+    color: var(--theme-on-container);
+  }
+}

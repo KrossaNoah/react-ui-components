@@ -33,11 +33,11 @@ input {
   font-family: inherit;
   color: var(--theme-on-surface);
   font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
   border: none;
+}
+
+input[type=text], 
+input[type=password] {
   outline: none;
 }
 
@@ -46,5 +46,9 @@ button,
 input[type=button],
 input[type=reset],
 input[type=submit] {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 10px;
   cursor: pointer;
 }
