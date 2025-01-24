@@ -31,4 +31,9 @@ $attribute-to-alias: (
       }
     }
   }
+
+  /// Gaps
+  .gap-#{$i} {
+    gap: $spacing;
+  }
 }
