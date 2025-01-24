@@ -1,7 +1,34 @@
+@use 'sass:map';
 @use 'default' as *;
+
+
+/// @color
+/// Colors are organized into contexts, with the keyword @color-context
+/// serving as their identifier.
+///
+/// * Each @color-context has a base state (with the exception of default),
+/// a dark state, and finally a light state. The latter two will be
+/// identified using the keyword @theme.
+///
+/// * Each state has the following properties:
+/// 
+///   - container - color for the base container background.
+/// 
+///   - on-container - color for text displayed on container.
+/// 
+///   - surface - background color for UI elements.
+/// 
+///   - on-surface - text color displayed on surface.
+/// 
+///   - alt-surface - alternative background color for UI elements (very useful
+///     for dynamically changing the background based on certain user actions).
+/// 
+///   - on-alt-surface - text color displayed on alt-surface.
+/// 
+///   - accent - highlight color used for emphasizing elements.
 
 
 /// Should merge all `@color-context` theme settings.
 $theme-prefix: '--theme';
-$dark-theme-palette: $color-default-dark-map;
+$dark-theme-palette: ($color-default-dark-map);
 $light-theme-palette: $color-default-light-map;
