@@ -1,0 +1,7 @@
+@use 'default' as *;
+
+
+/// Should merge all `@color-context` theme settings.
+$theme-prefix: '--theme';
+$dark-theme-palette: $color-default-dark-map;
+$light-theme-palette: $color-default-light-map;

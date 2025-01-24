@@ -1,0 +1,27 @@
+/// @color-context: default
+/// @description
+/// This file export default color context maps for `dark/light` themes.
+
+/// @color-context: default
+/// @theme: dark
+$color-default-dark-map: (
+  container: #000,
+  on-container: #fff,
+  surface: #0D0D0D,
+  on-surface: #7F7F7F,
+  alt-surface: #1E1E1E,
+  on-alt-surface: #666666,
+  accent: #4D4DF6,
+);
+
+/// @color-context: default
+/// @theme:light
+$color-default-light-map: (
+  container: #fff,
+  on-container: #000,
+  surface: hsl(200deg,10%, 95%),
+  on-surface: hsl(200deg,10%, 10%),
+  alt-surface: hsl(200deg,10%, 90%),
+  on-alt-surface: hsl(200deg,10%, 20%),
+  accent: #4D4DF6,
+);

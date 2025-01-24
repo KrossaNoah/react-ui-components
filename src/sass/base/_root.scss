@@ -1,3 +1,4 @@
+@use '@config/color' as *;
 
 /// @description: 
 /// Here we define global variables.
@@ -9,8 +10,7 @@
 :root {
   /// @color
   /// Put here all color vars that No son sensibles a los cambios de tema.
-  --color-primary: red;
-
+  /// ...
   /// @font:family
   /// This font family is embded in the <head> of index.html.
   /// is imported from google.
@@ -22,24 +22,16 @@
 .dark-mode {
   /// @color
   /// Put here all color variables for `mode-dark` theme.
-  --theme-container: #000;
-  --theme-on-container: #fff;
-  --theme-surface: #0D0D0D;
-  --theme-on-surface: #7F7F7F;
-  --theme-alt-surface: #1E1E1E;
-  --theme-on-alt-surface: #666666;
-  --theme-accent: #4D4DF6;
+  @each $key, $color in $dark-theme-palette {
+    #{$theme-prefix}-#{$key}: #{$color};
+  }
 }
 
 /// @theme:light
 .light-mode {
   /// @color
   /// Put here all color variables for `mode-light` theme.
-  --theme-container: #fff;
-  --theme-on-container: #000;
-  --theme-surface: hsl(200deg,10%, 95%);
-  --theme-on-surface: hsl(200deg,10%, 10%);
-  --theme-alt-surface: hsl(200deg,10%, 90%);
-  --theme-on-alt-surface: hsl(200deg,10%, 20%);
-  --theme-accent: #4D4DF6;
+  @each $key, $color in $light-theme-palette {
+    #{$theme-prefix}-#{$key}: #{$color};
+  }
 }
