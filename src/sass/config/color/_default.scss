@@ -11,7 +11,7 @@ $color-default-dark-map: (
   on-surface: #7F7F7F,
   alt-surface: #1E1E1E,
   on-alt-surface: #666666,
-  accent: #4D4DF6,
+  accent: hsl(240, 90%, 50%, .5),
 );
 
 /// @color-context: default
@@ -23,5 +23,5 @@ $color-default-light-map: (
   on-surface: hsl(200deg,10%, 10%),
   alt-surface: hsl(200deg,10%, 85%),
   on-alt-surface: hsl(200deg,10%, 20%),
-  accent: #4D4DF6,
+  accent: hsl(240, 90%, 50%, .5),
 );

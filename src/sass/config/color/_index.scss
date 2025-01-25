@@ -37,6 +37,18 @@ $color-context-palette-map: (
   danger: $color-danger-map
 );
 
+$color-context-properties: (
+  container,
+  on-container,
+  surface,
+  on-surface,
+  alt-surface,
+  on-alt-surface,
+  accent
+);
+
+/// List of aviable color contexts
+/// This list help us to generate classes.
 $avialble-color-contexts: map.keys($color-context-palette-map);
 
 /// Should merge all `@color-context` theme settings.
