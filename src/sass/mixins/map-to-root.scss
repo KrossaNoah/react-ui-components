@@ -1,0 +1,32 @@
+@use 'sass:meta';
+
+/// @mixin: map-to-root
+/// This mixin help us to dump configuration variables to root.
+/// Sopport nested maps.
+/// @param $prefix 
+/// @param $contig-map
+/// @param $context - by default is null.
+@mixin map-to-root($prefix, $config-map:(), $context:null) {
+  @each $key, $value in $config-map {
+    @if meta.type-of($value) == 'map' {
+      
+      $customed-context: if(
+        $context != null,
+        $key + "-" + $context,
+        $key
+      );
+
+      /// If detect a nested map should solve it by recursion.
+      @include map-to-root($prefix, $value, $customed-context);
+    
+    } @else {
+     
+      $root-variable-name: if($context != null, 
+        $prefix + "-" + $context + "-" + $key,
+        $prefix + "-" + $key 
+      ); 
+      
+      #{$root-variable-name}: #{$value}
+    }
+  }
+}
