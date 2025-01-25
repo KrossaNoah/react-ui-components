@@ -1,4 +1,73 @@
-%color-context-default {
-  background-color: var(--theme-surface);
-  color: var(--theme-on-surface);
+@use '@config/color' as *;
+
+
+/// @mixin: skin
+/// This mixin hel us to queckly set background and text color
+/// passing root variable names as param.
+@mixin skin(
+  $background: '--theme-surface', 
+  $text-color: '--theme-on-surface'
+) {
+  background-color: var(#{$background});
+  color: var(#{$text-color});
+}
+
+%shared-color-context-default {
+  @include skin;
+  --heightlight: var(--theme-accent);
+  --alt-background: var(--theme-alt-surface);
+  --alt-text: var(--theme-alt-on-surface);
+}
+
+
+%shared-color-context {
+  @extend %shared-color-context-default !optional;
+  
+  
+  /// Generate extenions for each color context
+  @each $context in $avialble-color-contexts {
+    &[class*=--#{$context}] {
+      
+      /// Base color context modefiers
+      --alt-background: var(--color-#{$context}-alt-surface);
+      --heightlight: var(--color-#{$context}-accent);
+      @include skin(
+        "--color-#{$context}-surface",
+        "--color-#{$context}-on-surface"
+        );
+        
+
+      /// Themed color modefier
+      /// This modefier adjust colors to active theme
+      &[class*=--themed] {
+        --alt-background: var(--theme-#{$context}-alt-surface);
+        --heightlight: var(--theme-#{$context}-accent);
+        @include skin(
+          "--theme-#{$context}-surface",
+          "--theme-#{$context}-on-surface"
+        );
+      }
+      
+      /// Dark color context modefiers
+      &[class*=--dark] {
+        --alt-background: var(--color-dark-#{$context}-alt-surface);
+        --heightlight: var(--color-dark-#{$context}-accent);
+        @include skin(
+          "--color-dark-#{$context}-surface",
+          "--color-dark-#{$context}-on-surface"
+        );
+      }
+
+
+      /// Light color context modefiers
+      &[class*=--light] {
+        --alt-background: var(--color-light-#{$context}-alt-surface);
+        --heightlight: var(--color-light-#{$context}-accent);
+        @include skin(
+          "--color-light-#{$context}-surface",
+          "--color-light-#{$context}-on-surface"
+        );
+      }
+    }
+  }
 }

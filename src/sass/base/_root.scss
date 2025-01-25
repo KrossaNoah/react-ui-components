@@ -10,7 +10,7 @@
 /// + For Theme Customization.
 :root {
   /// @color
-  @include map-to-root($color-prefix, $color-palette-map);
+  @include map-to-root($color-context-prefix, $color-context-palette-map);
 
   /// @font:family
   /// This font family is embded in the <head> of index.html.

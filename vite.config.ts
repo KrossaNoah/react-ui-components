@@ -12,7 +12,7 @@ export default defineConfig({
       '@base': resolve(__dirname, 'src/sass/base'),
       '@components': resolve(__dirname, 'src/sass/components'),
       '@shared': resolve(__dirname, 'src/sass/shared'),
-      '@mixins': resolve(__dirname, 'src/sass/config'),
+      '@mixins': resolve(__dirname, 'src/sass/mixins'),
       '@config': resolve(__dirname, 'src/sass/config'),
       '@functions': resolve(__dirname, 'src/sass/functions'),
       '@atoms': resolve(__dirname, 'src/sass/atoms'),

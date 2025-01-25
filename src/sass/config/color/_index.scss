@@ -1,6 +1,7 @@
 @use 'sass:map';
 @use 'default' as *;
 @use 'primary' as *;
+@use 'danger' as *;
 
 /// @color
 /// Colors are organized into contexts, with the keyword @color-context
@@ -30,23 +31,28 @@
 
 /// Base configuration for colors, this colors apply directly to root
 /// so, is not theme sensitive.
-$color-prefix: '--color';
-$color-palette-map: (
-  primary: $color-primary-map
+$color-context-prefix: '--color';
+$color-context-palette-map: (
+  primary: $color-primary-map,
+  danger: $color-danger-map
 );
+
+$avialble-color-contexts: map.keys($color-context-palette-map);
 
 /// Should merge all `@color-context` theme settings.
 $theme-prefix: '--theme';
 $dark-theme-palette: map.merge(
   $color-default-dark-map,
   (
-    primary: $color-primary-dark-map
+    primary: $color-primary-dark-map,
+    danger: $color-danger-dark-map,
   )
 );
 
 $light-theme-palette: map.merge(
   $color-default-light-map,
   (
-    primary: $color-primary-light-map
+    primary: $color-primary-light-map,
+    danger: $color-danger-light-map
   )
 );

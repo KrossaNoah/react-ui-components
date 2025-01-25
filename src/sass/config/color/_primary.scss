@@ -1,30 +1,30 @@
 $color-primary-dark-map: (
-  container: #00001A,
-  on-container: #9999FF,
-  surface: #00004D,
-  on-surface: #9999FF,
-  alt-surface: #0D0D73,
-  on-alt-surface: #FFFFFF,
-  accent: #3333FF
+  container: hsl(240, 100%, 5%),
+  on-container: hsl(240, 100%, 80%),
+  surface: hsl(240, 100%, 15%),
+  on-surface: hsl(240, 100%, 80%),
+  alt-surface: hsl(240, 80%, 25%),
+  on-alt-surface: hsl(0, 0%, 100%),
+  accent: hsl(240, 100%, 60%)
 );
   
 
 $color-primary-light-map: (
-  container: #FFFFFF,
-  on-container: #00004C,
+  container: hsl(0, 0%, 100%),
+  on-container: hsl(240, 100%, 15%),
   surface: #E5E5FF,
-  on-surface: #000066,
-  alt-surface: #CCCCFF,
-  on-alt-surface: #000099,
-  accent: #B2B2FF
+  on-surface: hsl(240, 100%, 20%),
+  alt-surface: hsl(240, 100%, 90%),
+  on-alt-surface: hsl(240, 80%, 30%),
+  accent: hsl(240, 100%, 85%)
 );
 
 
 $color-primary-map: (
-  surface: #3333FF,
-  on-surface: #E5E5FF,
-  alt-surface: #6666FF,
-  on-alt-surface: #FFFFFF,
+  surface: hsl(240, 100%, 60%),
+  on-surface: hsl(240, 100%, 95%),
+  alt-surface: hsl(240, 100%, 70%),
+  on-alt-surface: hsl(0, 0%, 100%),
   accent: #9999FF,
 
   /// To access theme without sensitive cases.

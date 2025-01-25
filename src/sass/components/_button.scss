@@ -1,16 +1,18 @@
 @use '@shared/form-field' as *;
+@use '@shared/color-context' as *;
 
 .button {
-  @extend %form-field;
+  @extend %form-field!optional;
+  @extend %shared-color-context;
   border: none;
-}
 
-.button {
-  &:active {
-    background-color: var(--theme-alt-surface);
-  } 
+  
+  &:hover {
+    background-color: var(--alt-background);
+  }
+
   &:focus {
-    outline-color: var(--theme-accent);
-    color: var(--theme-on-container);
+    outline-color: var(--heightlight);
   }
 }
+

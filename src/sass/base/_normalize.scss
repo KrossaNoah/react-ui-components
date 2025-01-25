@@ -23,20 +23,12 @@ body {
 } 
 
 
-
-
-
-/// Inputs and Buttons
-button,
-input {
-  background-color: transparent;
-  font-family: inherit;
-  color: var(--theme-on-surface);
-  font-weight: 500;
-  border: none;
-}
-
-input[type=text], 
-input[type=password] {
-  outline: none;
+@supports(-webkit-appearance: none) or (-moz-appearance: none) {
+  input[type='checkbox'],
+  input[type='radio'],
+  button {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
 }

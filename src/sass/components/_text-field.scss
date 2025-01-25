@@ -10,15 +10,14 @@
   // Structure
   @extend  %form-field;
   @extend %justify-center;
-  @extend %color-context-default;
 }
 
 
 /// @state: focus
 .text-field {
   &:has(&__input:focus) {
-    outline-color: var(--theme-accent);
-    color: var(--theme-on-container);
+    outline-color: var(--heightlight);
+    color: var(--alt-text);
     font-weight: inherit;
   }
 }
@@ -26,7 +25,7 @@
 /// @state:active
 .text-field {
   &:has(&__input:active) {
-    background-color: var(--theme-alt-surface);
+    background-color: var(--alt-background);
   }
 }
 

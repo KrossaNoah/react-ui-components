@@ -17,7 +17,7 @@ function App() {
       />
       <p>{value}</p>
       <ThemeToggle />
-      <button className="button">
+      <button className="button button--danger danger--themed ">
         Button
       </button>
     </div>

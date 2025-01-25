@@ -1,45 +1,47 @@
+@use '@shared/color-context' as *;
 /// @component: switch
 /// @description:
 /// This switch button should be refactored, Their styles only adopted for
 /// `<ThemeToggle>`. And the intention is to adapt it for forms as well.
 
+/// Base styles
 .switch {
-  // Structure
-  width: 55px; height: 30px;
-  position: relative;  
-  padding: 3px;
-  
-  // Visual
+  width: 38px;
+  border-radius: 12px;
+  border: 1px solid var(--theme-alt-surface);
   background-color: var(--theme-surface);
-  border-radius: 25px;
-  cursor: pointer;
-  outline: 1px solid transparent;
-  transition: outline-color .4s ease-in-out;
-  // State: hover
-  &:hover {
-    outline-color: var(--theme-accent);
+  padding: 1px;
+  transition: all .4s ease-in-out;
+  outline: 1.5px solid transparent;
+}
+
+
+/// @child: thumb
+.switch::after {
+  content: '';
+  display: block;
+  height: 20px;
+  width: 20px;
+  background-color: var(--theme-alt-surface);
+  border-radius: 50%;
+  transition: transform .2s ease-in;
+}
+
+/// @state: focus
+.switch:focus {
+  outline: 2px solid hsl(240, 100%, 60%, .2);
+}
+
+/// @state: hover
+.switch:hover {
+  border-color: var(--color-primary-surface);
+}
+
+/// @state: checked
+.switch:checked {
+  background-color: var(--color-primary-surface);
+  &::after {
+    background-color: var(--color-primary-on-surface);
+    transform: translateX(14px);
   }
-
-
-  // Child: thumb
-  &__thumb {    
-
-    // Structure
-    width: 24px; height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    // Visual
-    transition: all .4s ease-in-out;
-    background-color: var(--theme-alt-surface);
-    color: var(--theme-on-surface);
-    border-radius: 50%;
-    
-
-    // State: on
-    &--on {
-      transform: translateX(26px);
-    }
-  } 
 }
