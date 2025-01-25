@@ -1,0 +1,10 @@
+@use '@config/color' as *;
+
+
+.bg {
+ @each $prop in $color-context-properties {
+   &\:#{$prop} {
+     background-color: var(--theme-#{$prop});
+   }
+ } 
+}
