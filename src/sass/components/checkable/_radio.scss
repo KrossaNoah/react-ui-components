@@ -1,0 +1,23 @@
+@use '@shared/checkable' as *;
+
+.radio {
+  @extend %shared-checkable;  
+  width: 22px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &::after {
+    width: 12px;
+    height: 12px;
+    border-radius: 22px;
+  }
+
+  &:checked {
+    &::after {
+      background-color: var(--color-primary-on-surface);
+    }
+  }
+}
+

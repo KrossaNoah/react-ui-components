@@ -1,0 +1,29 @@
+%shared-checkable {
+  height: 22px;
+  border: 1px solid var(--theme-alt-surface);
+  background-color: var(--theme-surface);
+  transition: all .4s ease-in-out;
+  outline: 2px solid transparent;
+
+
+  &::after {
+    content: '';
+    display: block;
+    transition: transform .2s ease-in-out;
+  }
+
+
+  &:checked {
+    background-color: var(--color-primary-surface); 
+  }
+
+  &:hover {
+    border-color: var(--color-primary-surface);
+  }
+  
+  &:focus {
+    outline-color: var(--theme-accent);
+    border-color: var(--color-primary-surface); 
+    
+  }
+}

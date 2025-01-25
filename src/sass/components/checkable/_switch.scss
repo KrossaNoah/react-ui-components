@@ -1,0 +1,41 @@
+@use '@shared/checkable' as *;
+@use '@shared/color-context' as *;
+
+/// @component: switch
+/// 
+/// Base styles
+.switch {
+  @extend %shared-checkable;
+  width: 40px;
+  border-radius: 12px;
+  padding: 1px;
+}
+
+
+/// @child: thumb
+.switch::after {
+  height: 18px;
+  width: 18px;
+  background-color: var(--theme-alt-surface);
+  border-radius: 50%;
+}
+
+/// @state: focus
+.switch:focus {
+  outline: 2px solid var(--theme-accent);
+  border-color: transparent;
+}
+
+/// @state: hover
+.switch:hover {
+  border-color: var(--color-primary-surface);
+}
+
+/// @state: checked
+.switch:checked {
+  background-color: var(--color-primary-surface);
+  &::after {
+    background-color: var(--color-primary-on-surface);
+    transform: translateX(18px);
+  }
+}
