@@ -40,15 +40,3 @@ input[type=text],
 input[type=password] {
   outline: none;
 }
-
-/// Buttons
-button,
-input[type=button],
-input[type=reset],
-input[type=submit] {
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  gap: 10px;
-  cursor: pointer;
-}

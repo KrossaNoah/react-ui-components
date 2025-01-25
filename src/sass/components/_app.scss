@@ -5,10 +5,9 @@
 /// Whats do?
 /// + setup background and text color using root theme variables, 
 ///   see (@base/root) for more details.
-/// + take 100% of viewport size.
+/// + take 100% of viewport size (dynamicly).
 /// + has a transition to smooth out the change of theme
 #app {
-
   background-color: var(--theme-container);
   color: var(--theme-on-container);
   width: 100dvw;

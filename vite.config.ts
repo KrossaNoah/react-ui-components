@@ -9,13 +9,14 @@ export default defineConfig({
   // Configure SASS modules aliases
   resolve: {
     alias: {
-      '@sass': resolve(__dirname, 'src/sass'),
       '@base': resolve(__dirname, 'src/sass/base'),
       '@components': resolve(__dirname, 'src/sass/components'),
-      '@config': resolve(__dirname, 'src/sass/config'),
+      '@shared': resolve(__dirname, 'src/sass/shared'),
       '@mixins': resolve(__dirname, 'src/sass/config'),
+      '@config': resolve(__dirname, 'src/sass/config'),
       '@functions': resolve(__dirname, 'src/sass/functions'),
-      '@atoms': resolve(__dirname, 'src/sass/atoms')
+      '@atoms': resolve(__dirname, 'src/sass/atoms'),
+      '@sass': resolve(__dirname, 'src/sass'),
     }
   },
   
