@@ -1,49 +1,56 @@
 /// @description
 /// Flexbox helpers, atom classes that help us to for flex properties
 
- 
-.flx {
+.flex {
   display: flex;
 }
+.flex\:inline {
+  display: inline-flex; 
+}  
 
-.flx-col {
-  @extend .flx;
+.flex\:col {
+  display: flex;  
   flex-direction: column;
 }
 
-.flx-ln {
-  display: inline-flex;
-}
-
-.flx-ln-col {
-  @extend .flx-ln;
-  flex-direction: column;
-}
-
-
-$justify-to-alias: (
-  space-between: jf-btw,
-  space-around: jf-arud,
-  flex-start: jf-str,
-  flex-end: jf-end,
-  center: jf-cntr
+/// Align items properties
+$align-items-props: (
+  stretch,
+  flex-start,
+  flex-end,
+  center,
+  baseline,
+  
 );
-
-@each $value,$alias in $justify-to-alias {
-  .#{$alias} {
-    justify-content: $value;
+/// How to use?
+/// .aling:<propertie>
+/// example <element class="flex aling:center">
+@each $prop in $align-items-props {
+  .align{
+    &\:#{$prop} {
+      align-items: $prop;
+    }
   }
 }
 
 
-$align-to-alias: (
-  center: al-cntr,
-  flex-end: al-end,
-  flex-start: al-str
+/// Justify Content Properties
+$justify-content-props: (
+  center,
+  flex-start,
+  flex-end,
+  space-between,
+  space-around,
+  space-evenly,
 );
 
-@each $value, $alias in $align-to-alias {
-  .#{$alias} {
-    align-items: $value;
+/// How to use?
+/// .justify:<propertie>
+/// example <element class="flex justify:center">
+@each $prop in $justify-content-props {
+  .justify{
+    &\:#{$prop} {
+      justify-content: $prop;
+    }
   }
 }
