@@ -1,6 +1,6 @@
 @use 'sass:map';
 @use 'default' as *;
-
+@use 'primary' as *;
 
 /// @color
 /// Colors are organized into contexts, with the keyword @color-context
@@ -28,7 +28,25 @@
 ///   - accent - highlight color used for emphasizing elements.
 
 
+/// Base configuration for colors, this colors apply directly to root
+/// so, is not theme sensitive.
+$color-prefix: '--color';
+$color-palette-map: (
+  primary: $color-primary-map
+);
+
 /// Should merge all `@color-context` theme settings.
 $theme-prefix: '--theme';
-$dark-theme-palette: ($color-default-dark-map);
-$light-theme-palette: $color-default-light-map;
+$dark-theme-palette: map.merge(
+  $color-default-dark-map,
+  (
+    primary: $color-primary-dark-map
+  )
+);
+
+$light-theme-palette: map.merge(
+  $color-default-light-map,
+  (
+    primary: $color-primary-light-map
+  )
+);
