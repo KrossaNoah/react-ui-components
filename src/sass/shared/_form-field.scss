@@ -1,0 +1,25 @@
+@use './flex' as *;
+@use './color-context' as *;
+
+$form-field-height: 40px;
+$form-field-border-radius: 20px;
+$form-field-padding-inline: 20px;
+$form-field-gap: 10px;
+
+/// This shared extensions is apply to `<button>` and `<input> type text`.
+%form-field {
+  @extend %flex; @extend %align-center;
+  @extend %color-context-defaut !optional; 
+  
+  height: $form-field-height;
+  border-radius: $form-field-border-radius;
+  padding-inline: $form-field-padding-inline;
+  gap: $form-field-gap;
+  background-color: var(--theme-surface);
+  outline: 2px solid transparent;
+
+  transition: 
+    color .4s ease-in-out,
+    background-color .5s ease-in-out,
+    outline-color .3s ease-in-out;
+}
