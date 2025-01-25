@@ -1,4 +1,5 @@
 @use '@config/color' as *;
+@use '@mixins/map-to-root' as *;
 
 /// @description: 
 /// Here we define global variables.
@@ -9,29 +10,25 @@
 /// + For Theme Customization.
 :root {
   /// @color
-  /// Put here all color vars that No son sensibles a los cambios de tema.
-  /// ...
+  @include map-to-root($color-prefix, $color-palette-map);
+
   /// @font:family
   /// This font family is embded in the <head> of index.html.
   /// is imported from google.
-  --font-family-primary: 'IBM Plex Sans'
+  --font-family-primary: 'IBM Plex Sans';
+
 }
 
 
 /// @theme:dark
 .dark-mode {
   /// @color
-  /// Put here all color variables for `mode-dark` theme.
-  @each $key, $color in $dark-theme-palette {
-    #{$theme-prefix}-#{$key}: #{$color};
-  }
+  @include map-to-root($theme-prefix, $dark-theme-palette);
 }
 
 /// @theme:light
 .light-mode {
   /// @color
-  /// Put here all color variables for `mode-light` theme.
-  @each $key, $color in $light-theme-palette {
-    #{$theme-prefix}-#{$key}: #{$color};
-  }
+  @include map-to-root($theme-prefix, $light-theme-palette);
+
 }
