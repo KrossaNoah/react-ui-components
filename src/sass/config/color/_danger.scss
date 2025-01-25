@@ -1,0 +1,33 @@
+$color-danger-dark-map: (
+  container: hsl(0, 100%, 5%),
+  on-container: hsl(0, 100%, 80%),
+  surface: hsl(0, 100%, 15%),
+  on-surface: hsl(0, 100%, 80%),
+  alt-surface: hsl(0, 80%, 25%),
+  on-alt-surface: hsl(0, 0%, 100%),
+  accent: hsl(0, 100%, 60%)
+);
+  
+
+$color-danger-light-map: (
+  container: hsl(0, 0%, 100%),
+  on-container: hsl(0, 100%, 15%),
+  surface: hsl(0, 100%, 95%),
+  on-surface: hsl(0, 100%, 20%),
+  alt-surface: hsl(0, 100%, 90%),
+  on-alt-surface: hsl(0, 80%, 30%),
+  accent: hsl(0, 100%, 85%)
+);
+
+
+$color-danger-map: (
+  surface: hsl(0, 100%, 60%),
+  on-surface: hsl(0, 100%, 95%),
+  alt-surface: hsl(0, 100%, 70%),
+  on-alt-surface: hsl(0, 0%, 100%),
+  accent: hsl(0, 100%, 80%),
+
+  /// To access theme without sensitive cases.
+  dark: $color-danger-dark-map,
+  light: $color-danger-light-map
+);
